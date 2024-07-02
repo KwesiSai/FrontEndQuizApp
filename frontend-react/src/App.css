@@ -1,17 +1,7 @@
 .App {
   margin-left: 10%;
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-}
-.App h1{
-  width: 40%;
-  font-size: 50px;
-  font-family: Rubik;
-  font-weight: 100;
-}
-.App span{
-  font-weight: 1000;
+  margin-top: 0;
+  padding: 40px;
 }
 
 @font-face {
@@ -27,9 +17,4 @@
   font-style: normal; /* Adjust style as needed */
 }
 
-.App p{
-  font-family: Rubik-Italic;
-  font-size: 18px;
-  color: rgb(148, 183, 248);
-}
 

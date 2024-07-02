@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Patternsvg from './images/pattern-background-desktop-dark.svg'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <div className="pattern-overlay">
+      <img src={Patternsvg} alt="pattern svg"></img>
+
+    </div>
     <App />
   </React.StrictMode>
 );

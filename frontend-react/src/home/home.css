@@ -1,6 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 2;
+    position: relative;
+}
+.topic{
+    display: flex;
+    flex-direction: column; 
+    width: 50%; 
+}
+.topic button{
+    width: 310px;
+    border-radius: 10px;
+    display:flex;
+    background-color:rgb(59, 77, 102); 
+    color: white;
+    border: 1px solid transparent;
+    height: 55px;
+    margin-bottom: 5%;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 3px;
+}
+.topic img{
+    background-color: white;
+    border-radius: 10%;
+    height: 80%;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.topic span{
+    margin-left: 10%;
+    font-size: 18px;
+    margin-top: 4%;
+}
+.Home{
+    margin-top: 1%;
+}
 .Home h1{
-    width: 40%;
-    font-size: 50px;
+    width: 70%;
+    font-size: 55px;
     font-family: Rubik;
     font-weight: 100;
   }
@@ -24,4 +66,8 @@
     font-family: Rubik-Italic;
     font-size: 18px;
     color: rgb(148, 183, 248);
+    margin-top: 5%;
+  }
+  *{
+    box-sizing: border-box;
   }
