@@ -1,0 +1,27 @@
+.Home h1{
+    width: 40%;
+    font-size: 50px;
+    font-family: Rubik;
+    font-weight: 100;
+  }
+  .Home span{
+    font-weight: 1000;
+  }
+  @font-face {
+    font-family: 'Rubik-Italic';
+    src: url(../../public/fonts/Rubik-Italic-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100; /* Adjust weight as needed */
+    font-style: normal; /* Adjust style as needed */
+  }
+  @font-face {
+    font-family: 'Rubik';
+    src: url(../../public/fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100; /* Adjust weight as needed */
+    font-style: normal; /* Adjust style as needed */
+  }
+  
+  .Home p{
+    font-family: Rubik-Italic;
+    font-size: 18px;
+    color: rgb(148, 183, 248);
+  }

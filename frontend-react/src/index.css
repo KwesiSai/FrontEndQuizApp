@@ -5,9 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(59,77,102);
+  color: white;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('../public/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100; /* Adjust weight as needed */
+  font-style: normal; /* Adjust style as needed */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
