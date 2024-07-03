@@ -22,6 +22,7 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [score, setScore] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     fetch('/data.json')
@@ -39,14 +40,19 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
     setSelectedOption(option);
   };
 
-  const handleNextQuestion = () => {
+  const handleSubmitAnswer = () => {
     if (selectedOption) {
       if (selectedOption === questions[currentQuestionIndex].answer) {
         setScore(score + 1);
       }
-      setSelectedOption(null);
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSubmitted(true);
     }
+  };
+
+  const handleNextQuestion = () => {
+    setSelectedOption(null);
+    setSubmitted(false);
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
   return (
@@ -65,14 +71,21 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
                 key={index}
                 onClick={() => handleOptionClick(option)}
                 className={selectedOption === option ? 'selected' : ''}
+                disabled={submitted} // Disable options if submitted
               >
                 {option}
               </button>
             ))}
           </div>
-          <button onClick={handleNextQuestion} disabled={!selectedOption}>
-            Next Question
-          </button>
+          {!submitted ? (
+            <button onClick={handleSubmitAnswer} disabled={!selectedOption}>
+              Submit Answer
+            </button>
+          ) : (
+            <button onClick={handleNextQuestion}>
+              Next Question
+            </button>
+          )}
         </>
       ) : (
         <div>Loading questions...</div>
