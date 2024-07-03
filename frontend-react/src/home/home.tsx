@@ -10,7 +10,7 @@ interface Props {
   }
   
   const Home: React.FC<Props> = ({ onSelectTopic }) => {
-    const topics = ['HTML', 'CSS', 'JavaScript', 'Accessibilty'];
+    const topics = ['HTML', 'CSS', 'JavaScript', 'Accessibility'];
     return (
     <div className="container">
          <div className="Home">
