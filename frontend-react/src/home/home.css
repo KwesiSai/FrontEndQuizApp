@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 10%;
-    margin-left: 5%;
+    margin-left: 15%;
     margin-right: 5%;
     z-index: 2;
     position: relative;
@@ -11,19 +11,22 @@
     display: flex;
     flex-direction: column; 
     width: 50%; 
+    font-family:Rubik;
 }
 .topic button{
-    width: 310px;
+    width: 350px;
     border-radius: 10px;
     display:flex;
     background-color:rgb(59, 77, 102); 
     color: white;
     border: 1px solid transparent;
-    height: 55px;
+    height: 58px;
     margin-bottom: 5%;
     flex-direction: row;
     align-items: flex-start;
     padding: 3px;
+    font-family: Rubik;
+    font-weight: 800;
 }
 .topic button:hover {
   border: 2px solid rgb(167,41,245);
@@ -34,13 +37,16 @@
 .topic img{
     background-color: white;
     border-radius: 10%;
-    height: 80%;
+    height: 40px;
     margin-top: 1%;
-    margin-left: 1%;
+    margin-left: 10px;
+    width: 40px;
+    padding: 5px 8px;
+    object-fit: contain;
 }
 .topic span{
     margin-left: 10%;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 4%;
 }
 .Home{
@@ -76,4 +82,5 @@
   }
   *{
     box-sizing: border-box;
+    font-family: Rubik;
   }
