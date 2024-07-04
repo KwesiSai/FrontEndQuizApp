@@ -1,42 +1,70 @@
 .quiz-page{
     display: flex;
     flex-direction: row;
-    margin-top: 8%;
-    margin-left: 5%;
+    margin-top: 4%;
+    margin-left: 3%;
     margin-right: 5%;
     z-index: 2;
     position: relative;
 
 }
+.title{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    margin-top: 3%;
+    margin-left: 12.5%;
+    
+}
+.title img{
+    background-color: white;
+    border-radius: 12%;
+    height: 38px;
+    width: 36px;
+    padding: 3px 3px;
+    object-fit: contain;
+}
+.title span{
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: auto;
+    position: relative;
+    padding: 5px 20px;
+}
 .question-section{
     display: flex;
     flex-direction: column;
-    margin-top: 1%;
     margin-left: 10%;
-
 }
+
 .answer-section{
     display: flex;
     flex-direction: column;
-    margin-left: 43%;
-    margin-top: 3%;
+    margin-left: 42.5%;
+    margin-top: 0;
+    position: relative;
+    align-items: center;
 }
 .option-button{
-    width: 350px;
-    border-radius: 10px;
+    width: 380px;
+    border-radius: 16px;
+    padding: 3px;
     background-color:rgb(59, 77, 102); 
     color: white;
     border: 1px solid transparent;
-    height: 58px;
-    padding: 3px;
-    margin-bottom: 3%;
+    height: 70px;
+    margin-bottom: 4%;
     font-size: 17px;
     display: flex;
     flex-direction: row;
     font-family: Rubik;
+    align-items: center;
 }
 .answer-section span{
     margin-right:10px;
+    margin-left: 10px;
     padding: 5px;
     background-color: white;
     border-radius: 5px;
@@ -44,15 +72,13 @@
     color: rgb(49,82,61);
     width: 33px;
     height: 30px;
-    margin-top: 3%;
     font-family: Rubik;
     font-weight: 1000;
 }
 .answer-section p{
-margin-top: 3%;
-margin-left:0%;
+text-align: left;
 position: relative;
-font-weight: bolder;
+font-weight: bold;
 }
 .option-button img{
     transform: scale(0.7);
@@ -72,21 +98,29 @@ transform: scale(1.1);
 .option-button.selected.correct{
     border: 2px solid rgb(38,215,130);
 }
+.option-button.selected.correct span{
+    background-color:rgb(38,215,130);
+    color: white;
+}
 .option-button.selected.wrong{
     border: 2px solid rgb(238,84,84);
 }
-
-.question-count{
+.option-button.selected.wrong span{
+    background-color: rgb(238,84,84);
+    color: white;
+}
+.question-count, .question-count span{
     font-family: Rubik-Italic;
     color:rgb(148, 183, 248);
+
 }
 .question-text{
-    font-family: Rubik;
-    font-weight: 1000;
-    font-size: 30px;
-    margin-top: 3%;
+    font-family:Rubik;
+    font-weight: 800;
+    font-size: 28px;
+    margin-top: 4%;
     width:35%;
-    position: fixed;
+    position: absolute;
 }
 @font-face {
     font-family: 'Rubik-Italic';
@@ -106,11 +140,10 @@ transform: scale(1.1);
     font-family: Rubik;
     font-weight: 1000;
     border: 1px solid transparent;
-    height: 55px;
-    padding: 3px;
+    height: 70px;
     margin-bottom: 3%;
-    width: 350px;
-    border-radius: 10px;
+    width: 380px;
+    border-radius: 16px;
     font-size: larger;
 }
 .submit-button:hover{
@@ -118,4 +151,37 @@ transform: scale(1.1);
 }
 *{
     box-sizing: border-box;
+    margin: 0;
 }
+.bar{
+    background-color: rgb(98,108,127);
+    width: 350px;
+    height: 10px;
+    position: absolute;
+    margin-top: 25%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.progress{
+    background-color: rgb(167,41,245);
+    height: 60%;
+    transition: width 0.1 ease;
+    width: 0;
+    border-radius: 20px;
+    margin-left: 1%;
+
+}
+.error-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    font-family: Rubik;
+}
+.error-message img{
+    transform: scale(0.7);
+}
+  

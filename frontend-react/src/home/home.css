@@ -1,8 +1,8 @@
 .container{
     display: flex;
     flex-direction: row;
-    margin-top: 10%;
-    margin-left: 15%;
+    margin-top: 12%;
+    margin-left: 13%;
     margin-right: 5%;
     z-index: 2;
     position: relative;
@@ -14,16 +14,16 @@
     font-family:Rubik;
 }
 .topic button{
-    width: 350px;
-    border-radius: 10px;
+    width: 380px;
+    border-radius: 16px;
     display:flex;
     background-color:rgb(59, 77, 102); 
     color: white;
     border: 1px solid transparent;
-    height: 58px;
-    margin-bottom: 5%;
+    height: 70px;
+    margin-bottom: 4%;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     padding: 3px;
     font-family: Rubik;
     font-weight: 800;
@@ -38,7 +38,6 @@
     background-color: white;
     border-radius: 10%;
     height: 40px;
-    margin-top: 1%;
     margin-left: 10px;
     width: 40px;
     padding: 5px 8px;
@@ -47,7 +46,6 @@
 .topic span{
     margin-left: 10%;
     font-size: 20px;
-    margin-top: 4%;
 }
 .Home{
     margin-top: 1%;
