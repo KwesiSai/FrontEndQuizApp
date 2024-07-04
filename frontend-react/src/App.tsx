@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './home/home';
 
 function App() {
+  // Placeholder function for handling topic selection
+  const handleTopicSelection = (topic: string) => {
+    console.log(`Selected topic: ${topic}`);
+    // Add more logic as needed for topic selection
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home onSelectTopic={handleTopicSelection} />
     </div>
   );
 }
