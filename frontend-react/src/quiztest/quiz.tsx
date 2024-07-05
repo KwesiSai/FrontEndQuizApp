@@ -1,3 +1,4 @@
+// src/components/Quiz.tsx
 import React, { useEffect, useState } from 'react';
 import './quiz.css';
 import correct from '../images/icon-correct.svg';
@@ -18,9 +19,10 @@ interface QuizData {
 
 interface QuizProps {
   topic: string;
+  onComplete: (score: number, totalQuestions: number) => void;
 }
 
-const Quiz: React.FC<QuizProps> = ({ topic }) => {
+const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -32,6 +34,7 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
   const [totalQuestions] = useState(10);
   const [progress, setProgress] = useState(0);
   const [showError, setShowError] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
     fetch('/data.json')
@@ -75,12 +78,21 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
 
     setSelectedOption(null);
     setSubmitted(false);
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    if (currentQuestionIndex + 1 < questions.length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      const newProgress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+      setProgress(newProgress);
+    } else {
+      setQuizCompleted(true);
+      onComplete(score, totalQuestions);
+    }
     setIsCorrect(false);
-    const newProgress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-    setProgress(newProgress);
     setShowError(false);
   };
+
+  if (quizCompleted) {
+    return null;
+  }
 
   return (
     <>
@@ -89,7 +101,7 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
         <span>{title}</span>
       </div>
       <div className="quiz-page">
-        {questions.length > 0 ? (
+        {questions.length > 0 && (
           <>
             <div className="question-section">
               <div className="question-count">
@@ -129,8 +141,6 @@ const Quiz: React.FC<QuizProps> = ({ topic }) => {
                 </div>}
             </div>
           </>
-        ) : (
-          <div></div>
         )}
       </div>
     </>
