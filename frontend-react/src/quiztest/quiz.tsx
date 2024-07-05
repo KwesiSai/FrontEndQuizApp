@@ -105,7 +105,7 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
           <>
             <div className="question-section">
               <div className="question-count">
-                <span>Question {currentQuestionIndex + 1}</span> of {questions.length}
+                <p>Question {currentQuestionIndex + 1} of {questions.length}</p>
               </div>
               <div className="question-text">{questions[currentQuestionIndex].question}</div>
               <div className="bar">

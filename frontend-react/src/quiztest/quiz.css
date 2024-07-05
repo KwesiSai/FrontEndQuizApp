@@ -42,8 +42,7 @@
 .answer-section{
     display: flex;
     flex-direction: column;
-    margin-left: 42.5%;
-    margin-top: 0;
+    margin-left: 35%;
     position: relative;
     align-items: center;
 }
@@ -109,10 +108,10 @@ transform: scale(1.1);
     background-color: rgb(238,84,84);
     color: white;
 }
-.question-count, .question-count span{
+.question-count{
     font-family: Rubik-Italic;
     color:rgb(171, 193, 225);
-
+    width: 100%
 }
 .question-text{
     font-family:Rubik;
@@ -140,7 +139,7 @@ transform: scale(1.1);
     font-family: Rubik;
     font-weight: 1000;
     border: 1px solid transparent;
-    height: 70px;
+    height: 60px;
     margin-bottom: 3%;
     width: 380px;
     border-radius: 16px;
