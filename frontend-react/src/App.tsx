@@ -17,12 +17,12 @@ const App: React.FC = () => {
     setQuizCompleted(false);
   };
 
-  const handleQuizComplete = (finalScore: number, total: number) => {
+  const handleQuizComplete = (finalScore: number, total: number, quiztitle: string, quiziconSrc: string) => {
     setScore(finalScore);
     setTotalQuestions(total);
     setQuizCompleted(true);
-    setTitle(title);
-    setIconSrc(iconSrc);
+    setTitle(quiztitle);
+    setIconSrc(quiziconSrc);
   };
 
   const handleBackToHome = () => {
@@ -33,6 +33,7 @@ const App: React.FC = () => {
     setTitle("");
     setIconSrc("");
   };
+  console.log(`Title: ${title}`)
 
   return (
     <div className="app-container">

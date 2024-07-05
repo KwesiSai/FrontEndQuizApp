@@ -16,11 +16,29 @@ const Score: React.FC<ScoreProps> = ({ score, totalQuestions, onRestart, topic, 
   };
 
   return (
-    <div className="score-container">
-      <h2>Your Score</h2>
-      <p>{`You scored ${score} out of ${totalQuestions}`}</p>
-      <button onClick={handleRestart}>Restart Quiz</button>
-    </div>
+    <>
+        <div className="title">
+        <img src={iconSrc} alt="icon"/>
+        <span>{title}</span>
+      </div>
+        <div className="score-page">
+        <div className="message">
+            <p>Quiz completed</p>
+            <p>You scored...</p>
+        </div>
+        <div className="score-container">
+            <div>
+                <div className="scoretitle">
+                    <img src={iconSrc} alt='icon'/>
+                    <span> {title}</span>
+                </div>
+                <p>{score}</p>
+                <p>out of {totalQuestions}</p>
+            </div>
+            <button onClick={handleRestart}>Play Again</button>
+        </div>
+        </div>
+    </>
   );
 };
 

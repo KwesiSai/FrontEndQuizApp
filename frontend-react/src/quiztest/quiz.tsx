@@ -19,7 +19,7 @@ interface QuizData {
 
 interface QuizProps {
   topic: string;
-  onComplete: (score: number, totalQuestions: number) => void;
+  onComplete: (score: number, totalQuestions: number, title: string, iconSrc:string) => void;
 }
 
 const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
@@ -84,7 +84,7 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
       setProgress(newProgress);
     } else {
       setQuizCompleted(true);
-      onComplete(score, totalQuestions);
+      onComplete(score, totalQuestions, title, iconSrc);
     }
     setIsCorrect(false);
     setShowError(false);
