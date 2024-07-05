@@ -108,7 +108,7 @@ transform: scale(1.1);
     background-color: rgb(238,84,84);
     color: white;
 }
-.question-count{
+.question-count p{
     font-family: Rubik-Italic;
     color:rgb(171, 193, 225);
     width: 100%
@@ -118,7 +118,7 @@ transform: scale(1.1);
     font-weight: 800;
     font-size: 28px;
     margin-top: 4%;
-    width:35%;
+    width:30%;
     position: absolute;
 }
 @font-face {
