@@ -1,9 +1,10 @@
 // src/components/Quiz.tsx
-import React, { useEffect, useState } from 'react';
-import './quiz.css';
+import React, { useEffect, useState, useContext } from 'react';
+import styled, { css } from 'styled-components';
 import correct from '../images/icon-correct.svg';
 import wrong from '../images/icon-incorrect.svg';
 import error from '../images/icon-error.svg';
+import { ThemeContext } from '../App';
 
 interface Question {
   question: string;
@@ -19,8 +20,200 @@ interface QuizData {
 
 interface QuizProps {
   topic: string;
-  onComplete: (score: number, totalQuestions: number, title: string, iconSrc:string) => void;
+  onComplete: (score: number, totalQuestions: number, title: string, iconSrc: string) => void;
 }
+
+const Title = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  margin-top: 3%;
+  margin-left: 10%;
+
+  img {
+    background-color: white;
+    border-radius: 12%;
+    height: 38px;
+    width: 36px;
+    padding: 3px 3px;
+    object-fit: contain;
+  }
+
+  span {
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: auto;
+    position: relative;
+    padding: 5px 20px;
+  }
+`;
+
+const QuizPage = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+  margin-left: 3%;
+  margin-right: 5%;
+  z-index: 2;
+`;
+
+const QuestionSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  left: 10%;
+  position: absolute;
+  width: 40%;
+
+  .question-count p {
+    font-family: Rubik-Italic;
+    color: rgb(171, 193, 225);
+    width: 100%;
+  }
+
+  .question-text {
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 25px;
+    position: absolute;
+    margin-top: 7%;
+    letter-spacing: 3px;
+    -webkit-text-stroke: 1px;
+  }
+
+  .bar {
+    background-color: rgb(98, 108, 127);
+    width: 80%;
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    margin-top: 50%;
+  }
+
+  .progress {
+    background-color: rgb(167, 41, 245);
+    height: 60%;
+    transition: width 0.1s ease;
+    width: 0;
+    border-radius: 20px;
+    margin-left: 1%;
+  }
+`;
+
+const AnswerSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  left: 60%;
+  text-align: left;
+`;
+
+interface OptionButtonProps {
+  submitted: boolean;
+  selected: boolean;
+  isCorrect: boolean;
+  isWrong: boolean;
+}
+
+const OptionButton = styled.button<OptionButtonProps>`
+  width: 380px;
+  border-radius: 16px;
+  padding: 3px;
+  background-color: rgb(59, 77, 102);
+  color: white;
+  border: 1px solid transparent;
+  height: 70px;
+  margin-bottom: 4%;
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  font-family: Rubik;
+  align-items: center;
+
+  p {
+    text-align: left;
+  }
+
+  &:focus {
+    border: 2px solid rgb(167, 41, 245);
+  }
+
+  &:hover:not(:focus) span {
+    color: rgb(167, 41, 245);
+    transform: scale(1.1);
+  }
+
+  ${({ submitted, selected, isCorrect, isWrong }) => css`
+    ${submitted && selected && isCorrect && css`
+      border: 2px solid rgb(38, 215, 130);
+      span {
+        background-color: rgb(38, 215, 130);
+        color: white;
+      }
+    `}
+    ${submitted && selected && !isCorrect && css`
+      border: 2px solid rgb(238, 84, 84);
+      span {
+        background-color: rgb(238, 84, 84);
+        color: white;
+      }
+    `}
+  `}
+
+  img {
+    transform: scale(0.7);
+    margin-left: auto;
+  }
+`;
+
+const OptionSpan = styled.span`
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: rgb(49, 82, 61);
+  width: 33px;
+  height: 30px;
+  font-family: Rubik;
+  font-weight: 1000;
+`;
+
+const SubmitButton = styled.button`
+  background-color: rgb(167, 41, 245);
+  color: white;
+  font-family: Rubik;
+  font-weight: 1000;
+  border: 1px solid transparent;
+  height: 60px;
+  margin-bottom: 3%;
+  width: 380px;
+  border-radius: 16px;
+  font-size: larger;
+
+  &:hover {
+    background-color: rgb(210, 148, 248);
+  }
+`;
+
+const ErrorMessage = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  font-family: Rubik;
+
+  img {
+    transform: scale(0.7);
+  }
+`;
 
 const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -35,6 +228,8 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [showError, setShowError] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
+
+  const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     fetch('/data.json')
@@ -96,14 +291,14 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
 
   return (
     <>
-      <div className="title">
+      <Title>
         <img src={iconSrc} alt="icon" />
         <span>{title}</span>
-      </div>
-      <div className="quiz-page">
+      </Title>
+      <QuizPage>
         {questions.length > 0 && (
           <>
-            <div className="question-section">
+            <QuestionSection>
               <div className="question-count">
                 <p>Question {currentQuestionIndex + 1} of {questions.length}</p>
               </div>
@@ -111,18 +306,19 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
               <div className="bar">
                 <div className="progress" style={{ width: `${progress}%` }} />
               </div>
-            </div>
-            <div className="answer-section">
+            </QuestionSection>
+            <AnswerSection>
               {questions[currentQuestionIndex].options.map((option, index) => (
-                <button
+                <OptionButton
                   key={index}
                   onClick={() => handleOptionClick(option)}
-                  className={`option-button ${submitted && selectedOption === option ? 'selected' : ''} ${
-                    submitted && option === questions[currentQuestionIndex].answer ? 'correct' : 'wrong'
-                  }`}
+                  submitted={submitted}
+                  selected={selectedOption === option}
+                  isCorrect={option === questions[currentQuestionIndex].answer}
+                  isWrong={selectedOption !== option && option === questions[currentQuestionIndex].answer}
                   disabled={submitted}
                 >
-                  <span>{String.fromCharCode(65 + index)}</span>
+                  <OptionSpan>{String.fromCharCode(65 + index)}</OptionSpan>
                   <p>{option}</p>
                   {submitted && selectedOption === option && (
                     <img src={isCorrect ? correct : wrong} alt={isCorrect ? 'Correct' : 'Wrong'} />
@@ -130,19 +326,21 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
                   {submitted && selectedOption !== option && option === questions[currentQuestionIndex].answer && (
                     <img src={correct} alt="correct" />
                   )}
-                </button>
+                </OptionButton>
               ))}
-              <button className="submit-button" onClick={submitted ? handleNextQuestion : handleSubmitAnswer}>
+              <SubmitButton onClick={submitted ? handleNextQuestion : handleSubmitAnswer}>
                 {submitted ? 'Next Question' : 'Submit Answer'}
-              </button>
-              {showError && <div className="error-message">
-                <img src={error} alt='error'/>
-                Please select an option
-                </div>}
-            </div>
+              </SubmitButton>
+              {showError && (
+                <ErrorMessage>
+                  <img src={error} alt='error'/>
+                  Please select an option
+                </ErrorMessage>
+              )}
+            </AnswerSection>
           </>
         )}
-      </div>
+      </QuizPage>
     </>
   );
 };
