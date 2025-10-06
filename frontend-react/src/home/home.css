@@ -1,17 +1,17 @@
 .container{
     display: flex;
     flex-direction: row;
-    margin-top: 12%;
-    margin-left: 12%;
-    margin-right: 5%;
     z-index: 2;
-    position: relative;
+    margin-top: 12%;
+    margin-left: 3%;
+    margin-right: 5%;
 }
 .topic{
     display: flex;
-    flex-direction: column; 
-    width: 50%; 
+    flex-direction: column;
     font-family:Rubik;
+    position: relative;
+    left: 60%;
 }
 .topic button{
     width: 380px;
@@ -54,13 +54,15 @@
     font-size: 20px;
 }
 .Home{
-    margin-top: 1%;
+    left: 10%;
+    width: 40%;
+    position: absolute;
 }
 .Home h1{
-    width: 70%;
-    font-size: 55px;
+    font-size: 45px;
     font-family: Rubik;
     font-weight: 100;
+    width: 80%;
   }
   .Home span{
     font-weight: 1000;
