@@ -232,7 +232,7 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
   const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch(`${process.env.PUBLIC_URL}/data.json`)
       .then(response => response.json())
       .then(data => {
         const selectedQuiz = data.quizzes.find((quiz: QuizData) => quiz.title.toLowerCase() === topic.toLowerCase());
