@@ -5,6 +5,7 @@ body {
   font-weight: 100;
   margin: 0;
   padding: 0;
+  z-index: 1;
   
 }
 @font-face {
@@ -39,5 +40,11 @@ body {
 }
 button:active{
 border: 2px solid rgb(167, 41, 245);
+}
+
+@media (max-width: 600px){
+  .pattern-overlay{
+    z-index: 1;
+  }
 }
 

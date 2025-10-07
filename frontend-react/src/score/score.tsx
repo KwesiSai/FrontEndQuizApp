@@ -18,8 +18,8 @@ const Score: React.FC<ScoreProps> = ({ score, totalQuestions, onRestart, topic, 
   return (
     <>
       <div className="title">
-      <img src={iconSrc} alt="icon"/>
-      <span>{title}</span>
+        <img src={iconSrc} alt="icon"/>
+        <span>{title}</span>
       </div>
       <div className="score-page">
         <div className="message">

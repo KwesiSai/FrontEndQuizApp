@@ -1,12 +1,36 @@
 *{
     z-index: 2;
 }
+.title{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.title img{
+     background-color: white;
+    border-radius: 12%;
+    height: 38px;
+    width: 36px;
+    padding: 3px 3px;
+    object-fit: contain;
+}
+.title span{
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: auto;
+    position: relative;
+    padding: 5px 20px;
+}
 .score-page{
     display: flex;
     flex-direction: row;
     margin-left: 3%;
-    margin-top: 4%;
     margin-right: 5%;
+    margin-top: 4%;
 }
 .score-display{
     position: relative;
@@ -82,3 +106,30 @@
     color:rgb(171, 193, 225);
     font-weight: 500;
 } 
+
+@media (max-width: 600px){
+    .score-page{
+        flex-direction: column;
+        align-items: center;
+        margin: 5%;
+        margin-top: 10%;
+    }
+    .title{
+        z-index: 2;
+    }
+    .message{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        left: 0;
+
+
+    }
+    .score-display{
+        position:relative;
+        left: 0;
+        width: 100%;
+        align-items: center;
+        margin-top: 60px;
+    }
+}
