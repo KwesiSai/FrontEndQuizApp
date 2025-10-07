@@ -60,24 +60,31 @@ const QuizPage = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
+
   }
 `;
 
 const QuestionSection = styled.div`
   display: flex;
   flex-direction: column;
-  left: 10%;
   position: absolute;
-  width: 40%;
+  // align-items: center;
+  width: 50%;
 
+  .question-count {
+    @media (max-width: 600px){
+    align-self: center;
+    }
+  }
   .question-count p {
     font-family: Rubik-Italic;
     color: rgb(171, 193, 225);
     width: 100%;
+    margin-left: auto;
     @media (max-width: 600px){
       width: 150px;
-      margin-left: 0;
       position: relative;
+      
     }
   }
 
@@ -86,13 +93,15 @@ const QuestionSection = styled.div`
     font-weight: 500;
     font-size: 25px;
     position: absolute;
-    margin-top: 7%;
+    margin-top: 5%;
     letter-spacing: 3px;
     -webkit-text-stroke: 1px;
 
     @media (max-width: 600px){
       font-size: 20px;
-      max-width: 400px;
+      max-width: 100%;
+      align-self: center;
+
     }
   }
 
@@ -106,12 +115,14 @@ const QuestionSection = styled.div`
     align-items: center;
     justify-items: center;
     position: relative;
-    margin-top: 50%;
+    margin-top: 30%;
+
 
     @media (max-width: 600px){
-      margin-top: 30%;
+      margin-top: 35%;
       position: relative;
       overflow: hidden;
+      align-self: center;
     }
   }
 
@@ -128,6 +139,7 @@ const QuestionSection = styled.div`
     position: relative;
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 `;
 
@@ -144,7 +156,7 @@ const AnswerSection = styled.div`
     left: 0;
     width: 100%;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 10%;
   }
 `;
 
