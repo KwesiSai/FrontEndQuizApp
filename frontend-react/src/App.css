@@ -27,7 +27,7 @@
 }
 @media (max-width: 600px){
   .return{
-    top: 0;
+    top: 25px;
     margin-left: 15%;
     width: 70%;
   }
