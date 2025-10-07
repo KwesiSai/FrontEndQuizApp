@@ -1,11 +1,12 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     z-index: 2;
     margin-top: 12%;
     margin-left: 3%;
     margin-right: 5%;
 }
+
 .topic{
     display: flex;
     flex-direction: column;
@@ -90,3 +91,51 @@
     box-sizing: border-box;
     font-family: Rubik;
   }
+
+  /* Mobile responsiveness */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+  }
+
+  .Home {
+    position: relative; /* remove absolute layout */
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+
+  .Home h1 {
+    font-size: 28px;
+    width: 100%;
+  }
+
+  .Home p {
+    font-size: 12px;
+  }
+
+  .topic {
+    position: relative;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .topic button {
+    width: 70%;
+    height: auto;
+    max-width: 320px;
+  }
+
+  .topic img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .topic span {
+    font-size: 16px;
+  }
+}

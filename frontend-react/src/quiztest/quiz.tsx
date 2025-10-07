@@ -1,10 +1,9 @@
 // src/components/Quiz.tsx
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState,} from 'react';
 import styled, { css } from 'styled-components';
 import correct from '../images/icon-correct.svg';
 import wrong from '../images/icon-incorrect.svg';
 import error from '../images/icon-error.svg';
-import { ThemeContext } from '../App';
 
 interface Question {
   question: string;
@@ -228,8 +227,6 @@ const Quiz: React.FC<QuizProps> = ({ topic, onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [showError, setShowError] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
-
-  const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/data.json`)

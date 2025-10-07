@@ -1,47 +1,38 @@
 // App.tsx
 
 import React, { useState, createContext } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+// import styled, { ThemeProvider } from 'styled-components';
 import Home from './home/home';
 import Quiz from './quiztest/quiz';
 import Score from './score/score';
-import PatternDark from './images/pattern-background-desktop-dark.svg';
-import PatternLight from './images/pattern-background-desktop-light.svg';
+// import PatternDark from './images/pattern-background-desktop-dark.svg';
+// import PatternLight from './images/pattern-background-desktop-light.svg';
 
-export interface ThemeContextType {
-  toggleTheme: () => void;
-  isDarkMode: boolean;
-}
 
-export const ThemeContext = createContext<ThemeContextType>({
-  toggleTheme: () => {},
-  isDarkMode: true,
-});
+// const PatternOverlay = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   pointer-events: none;
+//   z-index: 1;
+// `;
 
-const PatternOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1;
-`;
+// const PatternImage = styled.img`
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   opacity: 1;
+//   z-index: 1;
+// `;
 
-const PatternImage = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  z-index: 1;
-`;
-
-const AppContainer = styled.div<{ isDarkMode: boolean }>`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? '#1a1a1a' : '#ffffff')};
-  min-height: 100vh;
-  color: ${({ isDarkMode }) => (isDarkMode ? '#ffffff' : '#000000')};
-`;
+// const AppContainer = styled.div<{ isDarkMode: boolean }>`
+//   background-color: ${({ isDarkMode }) => (isDarkMode ? '#1a1a1a' : '#ffffff')};
+//   min-height: 100vh;
+//   color: ${({ isDarkMode }) => (isDarkMode ? '#ffffff' : '#000000')};
+// `;
 
 const App: React.FC = () => {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
@@ -78,35 +69,26 @@ const App: React.FC = () => {
     setIconSrc("");
   };
 
-  return (
-    <ThemeContext.Provider value={{ toggleTheme, isDarkMode }}>
-      <PatternOverlay>
-        <PatternImage src={isDarkMode ? PatternDark : PatternLight} alt="pattern svg" />
-      </PatternOverlay>
-      <AppContainer isDarkMode={isDarkMode}>
-        <button onClick={toggleTheme}>
-          Switch to {isDarkMode ? 'Light' : 'Dark'} Mode
-        </button>
-        {quizCompleted ? (
-          <Score
-            score={score}
-            totalQuestions={totalQuestions}
-            topic={selectedTopic}
-            onRestart={handleBackToHome}
-            title={title}
-            iconSrc={iconSrc}
-          />
-        ) : selectedTopic ? (
-          <Quiz topic={selectedTopic} onComplete={handleQuizComplete} />
-        ) : (
-          <Home onSelectTopic={handleSelectTopic} />
-        )}
-        {selectedTopic && !quizCompleted && (
-          <button onClick={handleBackToHome}>Back to Home</button>
-        )}
-      </AppContainer>
-    </ThemeContext.Provider>
-  );
-};
-
+ return (
+  <div className="App">
+    {quizCompleted ? (
+      <Score
+        score={score}
+        totalQuestions={totalQuestions}
+        topic={selectedTopic}
+        onRestart={handleBackToHome}
+        title={title}
+        iconSrc={iconSrc}
+      />
+    ) : selectedTopic ? (
+      <Quiz topic={selectedTopic} onComplete={handleQuizComplete} />
+    ) : (
+      <Home onSelectTopic={handleSelectTopic} />
+    )}
+    {selectedTopic && !quizCompleted && (
+      <button onClick={handleBackToHome}>Back to Home</button>
+    )}
+  </div>
+);
+}
 export default App;
