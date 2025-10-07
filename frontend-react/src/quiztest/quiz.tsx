@@ -193,6 +193,7 @@ const OptionButton = styled.button<OptionButtonProps>`
   &:hover:not(:focus) span {
     color: rgb(167, 41, 245);
     transform: scale(1.1);
+    cursor: pointer;
   }
 
   ${({ submitted, selected, isCorrect, isWrong }) => css`
@@ -251,6 +252,7 @@ const SubmitButton = styled.button`
 
   &:hover {
     background-color: rgb(210, 148, 248);
+    cursor: pointer
   }
   @media (max-width: 600px){
     width: 90%;

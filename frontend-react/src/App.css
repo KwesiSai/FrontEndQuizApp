@@ -1,22 +1,46 @@
-.App {
+/* .App {
   margin-left: 10%;
   margin-top: 0;
   padding: 40px;
   letter-spacing: 1px;
   -webkit-text-stroke: 2px;
+} */
+.return {
+  background-color: rgb(98, 108, 127);
+  color:rgb(39, 2, 77);
+  font-family: Rubik;
+  font-weight: 1000;
+  border: 1px solid transparent;
+  font-size:20px;
+  border-radius: 12px;
+  width: 20%;
+  height:40px;
+  position: relative;
+  top: -70px;
+  margin-left: 10%;
 }
 
-@font-face {
+.return:hover{
+  cursor: pointer;
+  background-color: rgb(42, 53, 72);;
+  color: white;
+}
+@media (max-width: 600px){
+  .return{
+    top: 0;
+    margin-left: 15%;
+    width: 70%;
+  }
+}
+/* @font-face {
   font-family: 'Rubik-Italic';
   src: url(../public/fonts/Rubik-Italic-VariableFont_wght.ttf) format('truetype');
   font-weight: 100; /* Adjust weight as needed */
-  font-style: normal; /* Adjust style as needed */
-}
-@font-face {
+  /* font-style: normal; Adjust style as needed */
+/* @font-face {
   font-family: 'Rubik';
-  src: url(../public/fonts/Rubik-VariableFont_wght.ttf) format('truetype');
-  font-weight: 100; /* Adjust weight as needed */
-  font-style: normal; /* Adjust style as needed */
-}
-
+  src: url(../public/fonts/Rubik-VariableFont_wght.ttf) format('truetype'); */
+  /* font-weight: 100; Adjust weight as needed */
+  /* font-style: normal; Adjust style as needed */
+/* } */ 
 

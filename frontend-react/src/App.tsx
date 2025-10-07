@@ -5,6 +5,8 @@ import React, { useState} from 'react';
 import Home from './home/home';
 import Quiz from './quiztest/quiz';
 import Score from './score/score';
+import './App.css';
+
 // import PatternDark from './images/pattern-background-desktop-dark.svg';
 // import PatternLight from './images/pattern-background-desktop-light.svg';
 
@@ -13,7 +15,7 @@ import Score from './score/score';
 //   position: fixed;
 //   top: 0;
 //   left: 0;
-//   width: 100vw;
+//   width: 100
 //   height: 100vh;
 //   pointer-events: none;
 //   z-index: 1;
@@ -86,7 +88,7 @@ const App: React.FC = () => {
       <Home onSelectTopic={handleSelectTopic} />
     )}
     {selectedTopic && !quizCompleted && (
-      <button onClick={handleBackToHome}>Back to Home</button>
+      <button className="return" onClick={handleBackToHome}>Back to Home</button>
     )}
   </div>
 );
