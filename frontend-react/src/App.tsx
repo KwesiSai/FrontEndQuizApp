@@ -1,6 +1,6 @@
 // App.tsx
 
-import React, { useState, createContext } from 'react';
+import React, { useState} from 'react';
 // import styled, { ThemeProvider } from 'styled-components';
 import Home from './home/home';
 import Quiz from './quiztest/quiz';
@@ -41,11 +41,11 @@ const App: React.FC = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [title, setTitle] = useState<string>("");
   const [iconSrc, setIconSrc] = useState<string>("");
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
+  // const toggleTheme = () => {
+  //   setIsDarkMode((prevMode) => !prevMode);
+  // };
 
   const handleSelectTopic = (topic: string) => {
     setSelectedTopic(topic);

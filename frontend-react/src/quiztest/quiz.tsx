@@ -56,6 +56,11 @@ const QuizPage = styled.div`
   margin-left: 3%;
   margin-right: 5%;
   z-index: 2;
+  @media (max-width: 600px) {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
 `;
 
 const QuestionSection = styled.div`
@@ -69,6 +74,11 @@ const QuestionSection = styled.div`
     font-family: Rubik-Italic;
     color: rgb(171, 193, 225);
     width: 100%;
+    @media (max-width: 600px){
+      width: 150px;
+      margin-left: 0;
+      position: relative;
+    }
   }
 
   .question-text {
@@ -79,6 +89,11 @@ const QuestionSection = styled.div`
     margin-top: 7%;
     letter-spacing: 3px;
     -webkit-text-stroke: 1px;
+
+    @media (max-width: 600px){
+      font-size: 20px;
+      max-width: 400px;
+    }
   }
 
   .bar {
@@ -92,6 +107,12 @@ const QuestionSection = styled.div`
     justify-items: center;
     position: relative;
     margin-top: 50%;
+
+    @media (max-width: 600px){
+      margin-top: 30%;
+      position: relative;
+      overflow: hidden;
+    }
   }
 
   .progress {
@@ -101,6 +122,12 @@ const QuestionSection = styled.div`
     width: 0;
     border-radius: 20px;
     margin-left: 1%;
+
+  }
+    @media (max-width: 600px) {
+    position: relative;
+    width: 100%;
+    text-align: center;
   }
 `;
 
@@ -111,6 +138,14 @@ const AnswerSection = styled.div`
   align-items: center;
   left: 60%;
   text-align: left;
+
+  @media (max-width:600px){
+    position: relative;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    margin-top: 60px;
+  }
 `;
 
 interface OptionButtonProps {
@@ -169,6 +204,11 @@ const OptionButton = styled.button<OptionButtonProps>`
     transform: scale(0.7);
     margin-left: auto;
   }
+    @media (max-width: 600px){
+      width: 90%;
+      height: 20%;
+      max-width: 400px;
+    }
 `;
 
 const OptionSpan = styled.span`
@@ -199,6 +239,11 @@ const SubmitButton = styled.button`
 
   &:hover {
     background-color: rgb(210, 148, 248);
+  }
+  @media (max-width: 600px){
+    width: 90%;
+    height: 40px;
+    max-width: 400px;
   }
 `;
 
