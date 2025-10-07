@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/FrontEndQuizApp/static/css/main.65fe61f0.css",
-    "main.js": "/FrontEndQuizApp/static/js/main.0348172b.js",
+    "main.css": "/FrontEndQuizApp/static/css/main.728132aa.css",
+    "main.js": "/FrontEndQuizApp/static/js/main.3a21091f.js",
     "static/js/453.f6713f7b.chunk.js": "/FrontEndQuizApp/static/js/453.f6713f7b.chunk.js",
     "static/media/Rubik-VariableFont_wght.ttf": "/FrontEndQuizApp/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
     "static/media/Rubik-Italic-VariableFont_wght.ttf": "/FrontEndQuizApp/static/media/Rubik-Italic-VariableFont_wght.d83d9d961a7aaca406c2.ttf",
@@ -14,13 +14,12 @@
     "static/media/icon-html.svg": "/FrontEndQuizApp/static/media/icon-html.0317136c38b703264ee00bd54200c611.svg",
     "static/media/icon-correct.svg": "/FrontEndQuizApp/static/media/icon-correct.80b6b3c6b5dd06424058a9a0700912d4.svg",
     "static/media/pattern-background-desktop-dark.svg": "/FrontEndQuizApp/static/media/pattern-background-desktop-dark.e211d976d5b431130f8202dd6c8de661.svg",
-    "static/media/pattern-background-desktop-light.svg": "/FrontEndQuizApp/static/media/pattern-background-desktop-light.d8d38901bd02457d3784f818b9e2a9c1.svg",
-    "main.65fe61f0.css.map": "/FrontEndQuizApp/static/css/main.65fe61f0.css.map",
-    "main.0348172b.js.map": "/FrontEndQuizApp/static/js/main.0348172b.js.map",
+    "main.728132aa.css.map": "/FrontEndQuizApp/static/css/main.728132aa.css.map",
+    "main.3a21091f.js.map": "/FrontEndQuizApp/static/js/main.3a21091f.js.map",
     "453.f6713f7b.chunk.js.map": "/FrontEndQuizApp/static/js/453.f6713f7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65fe61f0.css",
-    "static/js/main.0348172b.js"
+    "static/css/main.728132aa.css",
+    "static/js/main.3a21091f.js"
   ]
 }
