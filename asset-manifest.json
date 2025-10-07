@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FrontEndQuizApp/static/css/main.7a36f376.css",
+    "main.css": "/FrontEndQuizApp/static/css/main.53fa86a6.css",
     "main.js": "/FrontEndQuizApp/static/js/main.3aa266a6.js",
     "static/js/453.f6713f7b.chunk.js": "/FrontEndQuizApp/static/js/453.f6713f7b.chunk.js",
     "static/media/Rubik-VariableFont_wght.ttf": "/FrontEndQuizApp/static/media/Rubik-VariableFont_wght.3a4acc0356c6ea73f2c3.ttf",
@@ -14,12 +14,12 @@
     "static/media/icon-html.svg": "/FrontEndQuizApp/static/media/icon-html.0317136c38b703264ee00bd54200c611.svg",
     "static/media/icon-correct.svg": "/FrontEndQuizApp/static/media/icon-correct.80b6b3c6b5dd06424058a9a0700912d4.svg",
     "static/media/pattern-background-desktop-dark.svg": "/FrontEndQuizApp/static/media/pattern-background-desktop-dark.e211d976d5b431130f8202dd6c8de661.svg",
-    "main.7a36f376.css.map": "/FrontEndQuizApp/static/css/main.7a36f376.css.map",
+    "main.53fa86a6.css.map": "/FrontEndQuizApp/static/css/main.53fa86a6.css.map",
     "main.3aa266a6.js.map": "/FrontEndQuizApp/static/js/main.3aa266a6.js.map",
     "453.f6713f7b.chunk.js.map": "/FrontEndQuizApp/static/js/453.f6713f7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a36f376.css",
+    "static/css/main.53fa86a6.css",
     "static/js/main.3aa266a6.js"
   ]
 }
